@@ -48,15 +48,19 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="blog">
-<meta property="og:url" content="http://blog.patrickwu.uk/archives/2020/01/">
+  <meta name="description" content="Discrete Random VariableGiven X, a discrete random variable,  Population Mean (Expectancy)  \mu &#x3D; E(X) &#x3D; \Sigma^{N}_{i &#x3D; 1}x_i p_iPopulation Variance  \sigma^2 &#x3D; Var(X) &#x3D; E[(X - \mu)^2] &#x3D; \Sigma^{N}_{">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Statistical Distributions (Part 1)">
+<meta property="og:url" content="http://blog.patrickwu.uk/11/02/2020/Statistical-Distributions-Part-1/">
 <meta property="og:site_name" content="blog">
+<meta property="og:description" content="Discrete Random VariableGiven X, a discrete random variable,  Population Mean (Expectancy)  \mu &#x3D; E(X) &#x3D; \Sigma^{N}_{i &#x3D; 1}x_i p_iPopulation Variance  \sigma^2 &#x3D; Var(X) &#x3D; E[(X - \mu)^2] &#x3D; \Sigma^{N}_{">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-11T19:33:07.000Z">
+<meta property="article:modified_time" content="2020-02-11T19:45:16.344Z">
 <meta property="article:author" content="patrick wu">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://blog.patrickwu.uk/archives/2020/01/">
+<link rel="canonical" href="http://blog.patrickwu.uk/11/02/2020/Statistical-Distributions-Part-1/">
 
 
 <script id="page-configurations">
@@ -64,11 +68,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false
+    isPost: true
   };
 </script>
 
-  <title>archive | blog</title>
+  <title>Statistical Distributions (Part 1) | blog</title>
   
 
 
@@ -165,66 +169,90 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/11/02/2020/Statistical-Distributions-Part-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="patrick wu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Statistical Distributions (Part 1)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">posted on</span>
+              
+
+              <time title="created: 11-02-2020 19:33:07 / modified: 19:45:16" itemprop="dateCreated datePublished" datetime="2020-02-11T19:33:07+00:00">11-02-2020</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-31T13:08:00+00:00"
-              content="31-01-2020">
-          01-31
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/31/01/2020/Jane-Street-Puzzle-Jan-2020/" itemprop="url">
-            <span itemprop="name">Jane Street Puzzle Jan 2019 - Alter/Nate</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-01-31T00:57:31+00:00"
-              content="31-01-2020">
-          01-31
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/31/01/2020/Swift-Thumbnail-on-the-fly/" itemprop="url">
-            <span itemprop="name">Swift Thumbnail on the fly</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+        <h1 id="Discrete-Random-Variable"><a href="#Discrete-Random-Variable" class="headerlink" title="Discrete Random Variable"></a>Discrete Random Variable</h1><p>Given <script type="math/tex">X</script>, a discrete random variable, </p>
+<p>Population Mean (Expectancy) </p>
+<script type="math/tex; mode=display">\mu = E(X) = \Sigma^{N}_{i = 1}x_i p_i</script><p>Population Variance </p>
+<script type="math/tex; mode=display">\sigma^2 = Var(X) = E[(X - \mu)^2] = \Sigma^{N}_{i = 1}(x_i - \mu)^2p_i = \Sigma^{N}_{i = 1}x_i^2p_i - \mu^2</script><p>If two discrete random variables $X$ and $Y$ are independent, </p>
+<script type="math/tex; mode=display">P(X = x, Y = y) = P(X = x)\cdot P(Y = y)</script><h1 id="Bernoulli-Distribution"><a href="#Bernoulli-Distribution" class="headerlink" title="Bernoulli Distribution"></a>Bernoulli Distribution</h1><script type="math/tex; mode=display">p = P(success)</script><p>If success, <script type="math/tex">X = 1</script>. If failure, <script type="math/tex">X = 0</script>.</p>
+<script type="math/tex; mode=display">P(X = 1) = p, \quad P(X = 0) = 1 - p</script><script type="math/tex; mode=display">E(X) = p \cdot 1 + (1 - p) \cdot  0 = p</script><script type="math/tex; mode=display">Var(X) = p - p^2 = p(1 - p)</script><h1 id="Binomial-Distribution"><a href="#Binomial-Distribution" class="headerlink" title="Binomial Distribution"></a>Binomial Distribution</h1><p>$X = $ number of successes in <script type="math/tex">n</script> independent repetitions of the experiment.</p>
+<p>Define <script type="math/tex">X_i</script> as the <script type="math/tex">i</script>th repetition’s success or not. <script type="math/tex">X_i</script> follows a Bernoulli Distribution.</p>
+<script type="math/tex; mode=display">E(X_i) = p, \quad Var(X_i) = p(1 - p)</script><script type="math/tex; mode=display">X = \Sigma_{i = 1}^{n} X_i</script><script type="math/tex; mode=display">E(X) = n \cdot p, Var(X) = n \cdot p(1 - p)</script><script type="math/tex; mode=display">P(X = k) = C_n^k p^k (1 - p)^{n - k}</script><h1 id="Geometric-Distribution"><a href="#Geometric-Distribution" class="headerlink" title="Geometric Distribution"></a>Geometric Distribution</h1><p>$X = $ number of tries up to and including first success</p>
+<script type="math/tex; mode=display">P(X = k) = (1 - p)^{k - 1}p</script><script type="math/tex; mode=display">E(X) = \Sigma_{k = 1}^{n}kp(1 - p)^{k - 1} = p(1 + 2(1 - p) + 3(1 - p)^2 + ... + n(1 - p)^{n - 1})</script><p>Let </p>
+<script type="math/tex; mode=display">q = 1 - p, \quad S = 1 + 2q + 3q^2 + ... + n q^{n- 1}</script><script type="math/tex; mode=display">qS = q + 2q^2 + ... + n q^{n}</script><script type="math/tex; mode=display">(1 - q)S = 1 + q + q^2 + ... + q^{n - 1} - nq^n = \frac{1 - q^n}{1 - q} - nq^n</script><script type="math/tex; mode=display">S = \frac{1 - q^n}{(1 - q)^2} - \frac{nq^n}{1 - q}</script><p>Given <script type="math/tex">0 < q < 1, \quad n \xrightarrow{} \infty</script></p>
+<script type="math/tex; mode=display">\lim_{n \xrightarrow{} \infty} S = \frac{1}{(1 - q)^2}</script><p>Such that <script type="math/tex">E(X) = \frac{p}{(1 - q)^2} = \frac{1}{p}</script></p>
+<script type="math/tex; mode=display">Var(X) = E(X^2) - E(X)^2</script><p>Using the same method as above, <script type="math/tex">E(X^2) = p\frac{1 - q^2}{(1 - q)^4} = p\frac{1 + q}{(1 - q)^3} = \frac{1 + q}{(1 - q)^2}</script></p>
+<script type="math/tex; mode=display">Var(X) = \frac{1 + q}{(1 - q)^2} - \frac{1}{p^2} = \frac{q}{p^2}</script><h1 id="Poisson-Distribution-To-be-continued…"><a href="#Poisson-Distribution-To-be-continued…" class="headerlink" title="Poisson Distribution (To be continued…)"></a>Poisson Distribution (To be continued…)</h1><script type="math/tex; mode=display">P(X = k) = \frac{e^{-\mu}\mu^k}{k!}, \quad E(X) = \mu, \quad Var(X) = \mu</script><p>Poisson Distribution is essentially a binomial distribution with very large $n$ (very small time interval).</p>
 
     </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/10/02/2020/Exploring-Flask-Auth-Methods-Part-1/" rel="prev" title="Exploring Flask Authentication Methods (Part 1)">
+      <i class="fa fa-chevron-left"></i> Exploring Flask Authentication Methods (Part 1)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -275,6 +303,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Discrete-Random-Variable"><span class="nav-number">1.</span> <span class="nav-text">Discrete Random Variable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bernoulli-Distribution"><span class="nav-number">2.</span> <span class="nav-text">Bernoulli Distribution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Binomial-Distribution"><span class="nav-number">3.</span> <span class="nav-text">Binomial Distribution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Geometric-Distribution"><span class="nav-number">4.</span> <span class="nav-text">Geometric Distribution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Poisson-Distribution-To-be-continued…"><span class="nav-number">5.</span> <span class="nav-text">Poisson Distribution (To be continued…)</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -441,6 +470,54 @@ window.addEventListener('pjax:success', () => {
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
