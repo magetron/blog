@@ -48,19 +48,19 @@
   };
 </script>
 
-  <meta name="description" content="DescriptionAlter&#x2F;Nate Two friends, Alter and Nate, have a conversation: Alter: Nate, let’s play a game. I’ll pick an integer between 1 and 10 (inclusive), then you’ll pick an integer between 1 and 10">
+  <meta name="description" content="Poisson Distribution (Continued)As stated in the previous post,  Let  \lambda &#x3D; n \cdot pBinomial(n, p) \approx Poisson(n p) &#x3D; Poisson(\lambda)For Binomial Distribution, P(x) &#x3D; C_n^x p^x q^{n-x} &#x3D; C_n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jane Street Puzzle Jan 2019 - Alter&#x2F;Nate">
-<meta property="og:url" content="http://blog.patrickwu.uk/31/01/2020/Jane-Street-Puzzle-Jan-2020/">
+<meta property="og:title" content="Statistical Distributions (Part 2)">
+<meta property="og:url" content="http://blog.patrickwu.uk/12/02/2020/Statistical-Distributions-Part-2/">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="DescriptionAlter&#x2F;Nate Two friends, Alter and Nate, have a conversation: Alter: Nate, let’s play a game. I’ll pick an integer between 1 and 10 (inclusive), then you’ll pick an integer between 1 and 10">
+<meta property="og:description" content="Poisson Distribution (Continued)As stated in the previous post,  Let  \lambda &#x3D; n \cdot pBinomial(n, p) \approx Poisson(n p) &#x3D; Poisson(\lambda)For Binomial Distribution, P(x) &#x3D; C_n^x p^x q^{n-x} &#x3D; C_n">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-31T13:08:00.000Z">
-<meta property="article:modified_time" content="2020-02-11T19:45:19.297Z">
+<meta property="article:published_time" content="2020-02-12T10:29:05.000Z">
+<meta property="article:modified_time" content="2020-02-12T15:40:43.588Z">
 <meta property="article:author" content="patrick wu">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://blog.patrickwu.uk/31/01/2020/Jane-Street-Puzzle-Jan-2020/">
+<link rel="canonical" href="http://blog.patrickwu.uk/12/02/2020/Statistical-Distributions-Part-2/">
 
 
 <script id="page-configurations">
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title>Jane Street Puzzle Jan 2019 - Alter/Nate | blog</title>
+  <title>Statistical Distributions (Part 2) | blog</title>
   
 
 
@@ -174,7 +174,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/31/01/2020/Jane-Street-Puzzle-Jan-2020/">
+    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/12/02/2020/Statistical-Distributions-Part-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -187,7 +187,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Jane Street Puzzle Jan 2019 - Alter/Nate
+          Statistical Distributions (Part 2)
         </h1>
 
         <div class="post-meta">
@@ -196,16 +196,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">posted on</span>
+              
 
-              <time title="created: 31-01-2020 13:08:00" itemprop="dateCreated datePublished" datetime="2020-01-31T13:08:00+00:00">31-01-2020</time>
+              <time title="created: 12-02-2020 10:29:05 / modified: 15:40:43" itemprop="dateCreated datePublished" datetime="2020-02-12T10:29:05+00:00">12-02-2020</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">edited on</span>
-                <time title="modified: 11-02-2020 19:45:19" itemprop="dateModified" datetime="2020-02-11T19:45:19+00:00">11-02-2020</time>
-              </span>
 
           
 
@@ -218,22 +212,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Alter/Nate</p>
-<p>Two friends, Alter and Nate, have a conversation:</p>
-<p>Alter: Nate, let’s play a game. I’ll pick an integer between 1 and 10 (inclusive), then you’ll pick an integer between 1 and 10 (inclusive), and then I’ll go again, then you’ll go again, and so on and so forth. We’ll keep adding our numbers together to make a running total. And whoever makes the running total be greater than or equal to 100 loses. You go first.</p>
-<p>Nate: That’s not fair! Whenever I pick a number X, you’ll just pick 11-X, and then I’ll always get stuck with 99 and I’ll make the total go greater than 100.</p>
-<p>Alter: OK fine. New rule then, no one can pick a number that would make the sum of that number and the previous number equal to 11. You still go first. Now can we play?</p>
-<p>Nate: Um… sure.</p>
-<p>Who wins, and what is their strategy?</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>The first player, Nate, is guaranteed to win in this case. </p>
-<p>Our goal is to let Nate get the sum of all <script type="math/tex">12k + 3</script>, which would eventually let him get <script type="math/tex">12 \times 8 + 3 = 99</script>, a guaranteed win.</p>
-<p>Therefore, our strategy for Nate is to let first pick number <script type="math/tex">3</script>, which contributes to the offset. Later, for him to increment by <script type="math/tex">12</script> each round, if Alter picks any number <script type="math/tex">x > 1</script>, Nate can pick the number <script type="math/tex">2 \leq 12 - x \leq 10</script>. Otherwise if Alter picks <script type="math/tex">1</script>, Nate then picks <script type="math/tex">1</script>. Given the rule that two consecutive number cannot add up to the sum of <script type="math/tex">11</script>, Alter can only pick <script type="math/tex">y \leq 9</script> in this case. Such that in these three rounds <script type="math/tex">1 + 1 + y \leq 11</script> (Alter, Nate, Alter). Nate will then pick <script type="math/tex">1 \leq 12 - 2 - y \leq 9</script> to reach <script type="math/tex">12k + 3</script>.</p>
-<p>If Nate can guarantee he reaches a sum of <script type="math/tex">12k + 3 \quad \forall k \geq 0</script>, he wins the game by reaching <script type="math/tex">99</script>.</p>
-<h2 id="More"><a href="#More" class="headerlink" title="More"></a>More</h2><p>For more puzzles, checkout</p>
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuamFuZXN0cmVldC5jb20vcHV6emxlcy8=" title="https://www.janestreet.com/puzzles/">Jane Street Puzzles<i class="fa fa-external-link"></i></span></li>
-</ul>
-
+        <h1 id="Poisson-Distribution-Continued"><a href="#Poisson-Distribution-Continued" class="headerlink" title="Poisson Distribution (Continued)"></a>Poisson Distribution (Continued)</h1><p>As stated in the previous post, </p>
+<p>Let </p>
+<script type="math/tex; mode=display">\lambda = n \cdot p</script><script type="math/tex; mode=display">Binomial(n, p) \approx Poisson(n p) = Poisson(\lambda)</script><p>For Binomial Distribution,</p>
+<script type="math/tex; mode=display">P(x) = C_n^x p^x q^{n-x} = C_n^x \cdot (\frac{\lambda}{n})^x \cdot (1 - \frac{\lambda}{n})^{n -x}</script><p>Thus,</p>
+<script type="math/tex; mode=display">\lim_{n \rightarrow \infty} P(x) = \lim_{n \rightarrow \infty} \frac{n \cdot (n - 1) ... \cdot (n - x + 1)}{x!} \cdot \frac{\lambda^x}{n^x} \cdot (1 - \frac{\lambda}{n})^n \cdot (1 - \frac{\lambda}{n})^{-x}</script><script type="math/tex; mode=display">= \lim_{n \rightarrow \infty} \frac{n \cdot (n - 1) ... \cdot (n - x+ 1)}{n^x} \cdot \frac{\lambda^x}{x
+!} \cdot \lim_{n \rightarrow \infty} (1 - \frac{\lambda}{n})^n (1 - \frac{\lambda}{n})^{-x}</script><script type="math/tex; mode=display">= 1 \cdot \frac{\lambda^x}{x!} \cdot e^{-\lambda} \cdot 1 = e^{-\lambda} \cdot \frac{\lambda^k}{k!}</script><h1 id="Gaussian-Distribution-Normal-Distribution"><a href="#Gaussian-Distribution-Normal-Distribution" class="headerlink" title="Gaussian Distribution (Normal Distribution)"></a>Gaussian Distribution (Normal Distribution)</h1><h2 id="Probability-Density-Function"><a href="#Probability-Density-Function" class="headerlink" title="Probability Density Function"></a>Probability Density Function</h2><p>Given <script type="math/tex">\mu = E(X)</script> and <script type="math/tex">\sigma^2 = Var(X)</script>,</p>
+<script type="math/tex; mode=display">f(x \mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \; e^{-\frac{(x-\mu)^2}{2\sigma^2}}</script><p>A standard normal distribution follows <script type="math/tex">\mu = 0</script> and <script type="math/tex">\sigma^2 = 1</script></p>
+<h2 id="Cumulative-Distribution-Function"><a href="#Cumulative-Distribution-Function" class="headerlink" title="Cumulative Distribution Function"></a>Cumulative Distribution Function</h2><p>Cumulative Distribution Function, or <script type="math/tex">F(x)</script> is the probability that <script type="math/tex">X \leq x</script>.</p>
+<script type="math/tex; mode=display">F(x \mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi \sigma^2}} \int_{-\infty}^{x} e^{-\frac{(t-\mu)^2}{2\sigma^2}}dt</script>
     </div>
 
     
@@ -248,13 +235,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/31/01/2020/Swift-Thumbnail-on-the-fly/" rel="prev" title="Swift Thumbnail on the fly">
-      <i class="fa fa-chevron-left"></i> Swift Thumbnail on the fly
+    <a href="/11/02/2020/Statistical-Distributions-Part-1/" rel="prev" title="Statistical Distributions (Part 1)">
+      <i class="fa fa-chevron-left"></i> Statistical Distributions (Part 1)
     </a></div>
-      <div class="post-nav-item">
-    <a href="/10/02/2020/Exploring-Flask-Auth-Methods-Part-1/" rel="next" title="Exploring Flask Authentication Methods (Part 1)">
-      Exploring Flask Authentication Methods (Part 1) <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -314,7 +298,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#More"><span class="nav-number">3.</span> <span class="nav-text">More</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Poisson-Distribution-Continued"><span class="nav-number">1.</span> <span class="nav-text">Poisson Distribution (Continued)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gaussian-Distribution-Normal-Distribution"><span class="nav-number">2.</span> <span class="nav-text">Gaussian Distribution (Normal Distribution)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Probability-Density-Function"><span class="nav-number">2.1.</span> <span class="nav-text">Probability Density Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cumulative-Distribution-Function"><span class="nav-number">2.2.</span> <span class="nav-text">Cumulative Distribution Function</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
