@@ -170,6 +170,80 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/13/02/2020/Exploring-Flask-Auth-Methods-Part-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="patrick wu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/13/02/2020/Exploring-Flask-Auth-Methods-Part-2/" class="post-title-link" itemprop="url">Exploring Flask Authentication Methods Part 2</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">posted on</span>
+              
+
+              <time title="created: 13-02-2020 20:27:47 / modified: 20:50:53" itemprop="dateCreated datePublished" datetime="2020-02-13T20:27:47+00:00">13-02-2020</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Continued"><a href="#Continued" class="headerlink" title="Continued"></a>Continued</h2><p>Last time we talked about CSRF tokens. So what is CSRF?</p>
+<h3 id="Cross-Site-Request-Forgery"><a href="#Cross-Site-Request-Forgery" class="headerlink" title="Cross-Site Request Forgery"></a>Cross-Site Request Forgery</h3><p>Well, <span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvQ3Jvc3Mtc2l0ZV9yZXF1ZXN0X2Zvcmdlcnk=" title="https://en.wikipedia.org/wiki/Cross-site_request_forgery">Wikipedia<i class="fa fa-external-link"></i></span> has a brief explanation of how it works. In short,</p>
+<blockquote>
+<p>Cross-site request forgery, also known as one-click attack or session riding and abbreviated as CSRF (sometimes pronounced sea-surf[1]) or XSRF, is a type of malicious exploit of a website where unauthorized commands are transmitted from a user that the web application trusts.</p>
+</blockquote>
+<p>There are many ways to utilise CSRF on unprotected websites. However, this can be largely prevented by providing the user with a <code>csrf_token</code> only when they logging in on the valid website, and storing them in sessions.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>My final solution to this problem, in the <code>Swift</code> code below, is to use a web request to get a <code>csrf_token</code> and then login with a valid user request.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">fetchCSRFToken</span> <span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> csrfToken = <span class="string">""</span></span><br><span class="line">    <span class="keyword">let</span> semaphore = <span class="type">DispatchSemaphore</span>(value: <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: <span class="type">URL</span>.<span class="keyword">init</span>(string: newAdapter.generateLoginQueryURL())!) &#123;(data, response, error) <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">defer</span> &#123; semaphore.signal() &#125;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> divFields: <span class="type">Elements</span> = <span class="keyword">try</span> <span class="type">SwiftSoup</span>.parse(<span class="type">String</span>(decoding: data, <span class="keyword">as</span>: <span class="type">UTF8</span>.<span class="keyword">self</span>)).body()!.select(<span class="string">"div"</span>)</span><br><span class="line">            <span class="keyword">let</span> centreDiv = divFields.array()[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">let</span> inputFields = <span class="keyword">try</span> centreDiv.select(<span class="string">"form"</span>).first()!.select(<span class="string">"input"</span>)</span><br><span class="line">            <span class="keyword">for</span> inputField <span class="keyword">in</span> inputFields &#123;</span><br><span class="line">                <span class="keyword">if</span> inputField.id() == <span class="string">"csrf_token"</span> &#123;</span><br><span class="line">                    csrfToken = <span class="keyword">try</span> inputField.val()</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"error: cannot fetch csrf token"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    task.resume()</span><br><span class="line">    semaphore.wait()</span><br><span class="line">    <span class="keyword">if</span> (csrfToken == <span class="string">""</span>) &#123;</span><br><span class="line">        <span class="built_in">fatalError</span>(<span class="string">"error: cannot fetch csrf token"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> csrfToken</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Afterwards, generate a <code>POST</code> request in <code>JSON</code> style (e.g. <code>{email: &quot;x5user@mail.com&quot;, password:&quot;pwd&quot;, csrf_token:&quot;token&quot;}</code>) and post it to your designated <code>flask-security</code> login endpoint. You will get a response with your authentication token. From then on, use this authentication token for future requests.</p>
+<h2 id="What’s-more"><a href="#What’s-more" class="headerlink" title="What’s more?"></a>What’s more?</h2><p>Authentication tokens should have a valid lifetime and re-authenticate from time to time to ensure better security. We have yet to come up with a solution to modify <code>flask-security</code>‘s internal mechanisms to realise this feature.</p>
+<p>Regarding the <code>HTTP</code> request, we are planning to adapt to <code>Alamofire</code> for more elegant network solutions.</p>
+<h2 id="More"><a href="#More" class="headerlink" title="More"></a>More</h2><p>For more information, checkout</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvQ3Jvc3Mtc2l0ZV9yZXF1ZXN0X2Zvcmdlcnk=" title="https://en.wikipedia.org/wiki/Cross-site_request_forgery">Wikipedia - Cross-site Request Forgery<i class="fa fa-external-link"></i></span> </li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9mbGFzay13dGYucmVhZHRoZWRvY3MuaW8vZW4vc3RhYmxlL2NzcmYuaHRtbA==" title="https://flask-wtf.readthedocs.io/en/stable/csrf.html">CSRF Protection - Flask<i class="fa fa-external-link"></i></span></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/12/02/2020/Statistical-Distributions-Part-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -651,7 +725,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
