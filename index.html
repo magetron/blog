@@ -170,6 +170,86 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/10/03/2020/CC-Series-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="patrick wu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/10/03/2020/CC-Series-1/" class="post-title-link" itemprop="url">C++ Notes Series (No. 1) Package Principles and Namespaces</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">posted on</span>
+
+              <time title="created: 10-03-2020 22:10:42" itemprop="dateCreated datePublished" datetime="2020-03-10T22:10:42+00:00">10-03-2020</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">edited on</span>
+                <time title="modified: 11-03-2020 00:48:41" itemprop="dateModified" datetime="2020-03-11T00:48:41+00:00">11-03-2020</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><blockquote>
+<p>In computer programming, package principles are a way of organizing classes in larger systems to make them more organized and manageable. They aid in understanding which classes should go into which packages (package cohesion) and how these packages should relate with one another (package coupling). Package principles also includes software package metrics, which help to quantify the dependency structure, giving different and/or more precise insights into the overall structure of classes and packages. </p>
+</blockquote>
+<p>An important counterpart of which is <code>namespace</code> in <code>C++</code>. CPPReference states that </p>
+<blockquote>
+<p>Namespaces provide a method for preventing name conflicts in large projects.</p>
+<p>Symbols declared inside a namespace block are placed in a named scope that prevents them from being mistaken for identically-named symbols in other scopes.</p>
+<p>Multiple namespace blocks with the same name are allowed. All declarations within those blocks are declared in the named scope.</p>
+</blockquote>
+<h1 id="Discussion-on-functions-in-namespaces-or-classes"><a href="#Discussion-on-functions-in-namespaces-or-classes" class="headerlink" title="Discussion on functions in namespaces or classes"></a>Discussion on functions in namespaces or classes</h1><p>Putting an isolate function in a <code>namespace</code> could be rather a better decision than incorporating it in a <code>class</code> as a <code>method</code>, contradicting to what we have learnt from <code>COMP0004</code>. More specifically, whenever you can implement some functionality efficiently without having to access any private or protected code or data members, you should break it into a free function in the class’s namespace instead of leaving it as a member function. The reason is that by doing so, you keep the class’s interface as small as possible, and thereby reduce the amount of code that potentially needs to be changed if you change the private internals of the class, which is the point of Objective Oriented Programming (OOP) in the first place. Scott Meyers, author of Effective C++, <span class="exturl" data-url="aHR0cHM6Ly93d3cuZHJkb2Jicy5jb20vY3BwL2hvdy1ub24tbWVtYmVyLWZ1bmN0aW9ucy1pbXByb3ZlLWVuY2Fwc3UvMTg0NDAxMTk3" title="https://www.drdobbs.com/cpp/how-non-member-functions-improve-encapsu/184401197">goes into more detail here<i class="fa fa-external-link"></i></span>.</p>
+<p>Unfortunately, separating out code that works on <code>T</code> from the class <code>T</code> itself just feels untidy to many programmers raised on the OOP mantra of “Bring code and data together”. But “bringing code and data together” doesn’t actually achieve anything material from a code maintenance or expressiveness point of view — all it gets you is a certain aesthetic appeal, so if you can get past that, you will benefit from the materially better design that comes from keeping class interfaces as small as possible.</p>
+<p>If it takes a while to convince yourself that separate functions are actually the Right Thing, don’t feel bad — Meyers’s own first edition of Effective C++ made the same mistake. An example of the C++ Standard Library getting it wrong would be a function like <code>find_first_of()</code> in <code>std::string</code>, which can be implemented with full efficiency without having to know any of the internal details of a <code>std::string</code> — all such a function needs is access to the public functions <code>size()</code> and <code>operator[]()</code>.</p>
+<p>To end with Scott Meyers own paragraph, </p>
+<blockquote>
+<p>It’s time to abandon the traditional, but inaccurate, ideas of what it means to be object-oriented. Are you a true encapsulation believer? If so, I know you’ll embrace non-friend non-member functions with the fervor they deserve.</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/25/02/2020/Continuous-Random-Variables-vs-Discrete-Random-Variables-Part-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -813,77 +893,12 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/27/09/2019/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="patrick wu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/27/09/2019/hello-world/" class="post-title-link" itemprop="url">hello world</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">posted on</span>
-
-              <time title="created: 27-09-2019 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-27T00:00:00+01:00">27-09-2019</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">edited on</span>
-                <time title="modified: 31-01-2020 13:06:25" itemprop="dateModified" datetime="2020-01-31T13:06:25+00:00">31-01-2020</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>welcome to my new blog.</p>
-<p>for old material, please visit an <span class="exturl" data-url="aHR0cHM6Ly9vbGQtYmxvZy5wYXRyaWNrd3UudWs=" title="https://old-blog.patrickwu.uk">alternative site<i class="fa fa-external-link"></i></span>.</p>
-<h2 id="title"><a href="#title" class="headerlink" title="title"></a>title</h2><p>below is a test on code snippets.</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#pramga GCC optimize (<span class="meta-string">"Ofast"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> fast_io = [] () &#123;</span><br><span class="line">	ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="literal">nullptr</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; ();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="next page"></i></a>
+  </nav>
 
 
 
@@ -947,7 +962,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
