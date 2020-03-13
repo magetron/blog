@@ -22,15 +22,20 @@
     var CONFIG = {"hostname":"blog.patrickwu.uk","root":"/","scheme":"Muse","version":"7.7.2","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="blog">
-<meta property="og:url" content="http://blog.patrickwu.uk/archives/2020/02/">
+  <meta name="description" content="IntroductionAside from the aforementioned Uniform Distribution, there are many types of distributions for continuous random variables. The Exponential DistributionParameter $ \lambda \quad (\lambda &amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Continuous Probability Distributions">
+<meta property="og:url" content="http://blog.patrickwu.uk/12/03/2020/Continuous-Probability-Distributions/">
 <meta property="og:site_name" content="blog">
+<meta property="og:description" content="IntroductionAside from the aforementioned Uniform Distribution, there are many types of distributions for continuous random variables. The Exponential DistributionParameter $ \lambda \quad (\lambda &amp;g">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-12T23:05:22.000Z">
+<meta property="article:modified_time" content="2020-03-13T07:06:52.833Z">
 <meta property="article:author" content="patrick wu">
+<meta property="article:tag" content="math">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://blog.patrickwu.uk/archives/2020/02/">
+<link rel="canonical" href="http://blog.patrickwu.uk/12/03/2020/Continuous-Probability-Distributions/">
 
 
 <script id="page-configurations">
@@ -38,11 +43,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false
+    isPost : true
   };
 </script>
 
-  <title>archive | blog</title>
+  <title>Continuous Probability Distributions | blog</title>
   
 
 
@@ -149,166 +154,88 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/12/03/2020/Continuous-Probability-Distributions/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="patrick wu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Continuous Probability Distributions
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">posted on</span>
+
+              <time title="created: 12-03-2020 23:05:22" itemprop="dateCreated datePublished" datetime="2020-03-12T23:05:22+00:00">12-03-2020</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">edited on</span>
+                <time title="modified: 13-03-2020 07:06:52" itemprop="dateModified" datetime="2020-03-13T07:06:52+00:00">13-03-2020</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
+        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Aside from the aforementioned Uniform Distribution, there are many types of distributions for continuous random variables.</p>
+<h1 id="The-Exponential-Distribution"><a href="#The-Exponential-Distribution" class="headerlink" title="The Exponential Distribution"></a>The Exponential Distribution</h1><p>Parameter $ \lambda \quad (\lambda &gt; 0) $</p>
+<script type="math/tex; mode=display">X \sim Exp(\lambda)</script><script type="math/tex; mode=display">c.d.f \quad F(x) = 1 - e^{-\lambda x} \quad (x > 0)</script><script type="math/tex; mode=display">p.d.f \quad f(x) = \frac{d F(x)}{dx} = -e^{-\lambda x} \cdot -\lambda = \lambda e^{-\lambda x} \quad (x > 0)</script><script type="math/tex; mode=display">\mu = \int_{0}^{\infty} xf(x)dx = \lambda \int_{0}^{\infty} xe^{-\lambda x}dx</script><script type="math/tex; mode=display">u = x, \quad v = \frac{e^{-\lambda x}}{-\lambda}</script><script type="math/tex; mode=display">\int xe^{-\lambda x}dx = uv - \int u'v = \frac{xe^{-\lambda x}}{-\lambda} - \frac{-1}{\lambda} \int e^{-\lambda x} dx</script><script type="math/tex; mode=display">w = -\lambda x, \quad \frac{dw}{dx} = -\lambda, \quad dx = \frac{dw}{-\lambda}</script><script type="math/tex; mode=display">\int e^{-\lambda x}dx = \int e^{w} \cdot \frac{dw}{-\lambda} = \frac{1}{-\lambda} e^{w} = \frac{1}{-\lambda} e^{-\lambda x}</script><script type="math/tex; mode=display">\int xe^{-\lambda x}dx = \frac{xe^{-\lambda x}}{-\lambda} - \frac{-1}{\lambda} \frac{1}{-\lambda} e^{-\lambda x} = -\frac{xe^{-\lambda x}}{\lambda} - \frac{e^{-\lambda x}}{\lambda^2}</script><script type="math/tex; mode=display">\mu = \lambda [-\frac{xe^{-\lambda x}}{\lambda} - \frac{e^{-\lambda x}}{\lambda^2}]_0^\infty = \lambda (0 + \frac{1}{\lambda^2}) = \frac{1}{\lambda}</script><script type="math/tex; mode=display">\sigma^2 = \int_{0}^{\infty} x^2f(x) dx - \mu^2</script>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-25T15:41:59+00:00"
-              content="25-02-2020">
-          02-25
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/math/" rel="tag"># math</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/25/02/2020/Continuous-Random-Variables-vs-Discrete-Random-Variables-Part-2/" itemprop="url">
-            <span itemprop="name">Continuous Random Variables VS. Discrete Random Variables (Part 2)</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-24T20:39:55+00:00"
-              content="24-02-2020">
-          02-24
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/24/02/2020/Continuous-Random-Variables-vs-Discrete-Random-Variables-Part-1/" itemprop="url">
-            <span itemprop="name">Continuous Random Variables VS. Discrete Random Variables (Part 1)</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-23T01:42:31+00:00"
-              content="23-02-2020">
-          02-23
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/23/02/2020/CC-Series-0/" itemprop="url">
-            <span itemprop="name">C++ Notes Series (No. 0)</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-13T20:27:47+00:00"
-              content="13-02-2020">
-          02-13
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/13/02/2020/Exploring-Flask-Auth-Methods-Part-2/" itemprop="url">
-            <span itemprop="name">Exploring Flask Authentication Methods Part 2</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-12T10:29:05+00:00"
-              content="12-02-2020">
-          02-12
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/12/02/2020/Statistical-Distributions-Part-2/" itemprop="url">
-            <span itemprop="name">Statistical Distributions (Part 2)</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-11T19:33:07+00:00"
-              content="11-02-2020">
-          02-11
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/11/02/2020/Statistical-Distributions-Part-1/" itemprop="url">
-            <span itemprop="name">Statistical Distributions (Part 1)</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-10T02:03:08+00:00"
-              content="10-02-2020">
-          02-10
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/10/02/2020/Exploring-Flask-Auth-Methods-Part-1/" itemprop="url">
-            <span itemprop="name">Exploring Flask Authentication Methods (Part 1)</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
+        
 
 
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/10/03/2020/CC-Series-1/" rel="prev" title="C++ Notes Series (No. 1) Package Principles and Namespaces">
+      <i class="fa fa-chevron-left"></i> C++ Notes Series (No. 1) Package Principles and Namespaces
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -359,6 +286,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Exponential-Distribution"><span class="nav-number">2.</span> <span class="nav-text">The Exponential Distribution</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -531,6 +459,59 @@ window.addEventListener('pjax:success', () => {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
