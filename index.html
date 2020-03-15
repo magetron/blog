@@ -656,7 +656,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">edited on</span>
-                <time title="modified: 12-03-2020 02:09:51" itemprop="dateModified" datetime="2020-03-12T02:09:51+00:00">12-03-2020</time>
+                <time title="modified: 15-03-2020 00:14:15" itemprop="dateModified" datetime="2020-03-15T00:14:15+00:00">15-03-2020</time>
               </span>
 
           
@@ -675,7 +675,8 @@
 <script type="math/tex; mode=display">\lambda = n \cdot p</script><script type="math/tex; mode=display">Binomial(n, p) \approx Poisson(n p) = Poisson(\lambda)</script><p>For Binomial Distribution,</p>
 <script type="math/tex; mode=display">P(x) = C_n^x p^x q^{n-x} = C_n^x \cdot (\frac{\lambda}{n})^x \cdot (1 - \frac{\lambda}{n})^{n -x}</script><p>Thus,</p>
 <script type="math/tex; mode=display">\lim_{n \rightarrow \infty} P(x) = \lim_{n \rightarrow \infty} \frac{n \cdot (n - 1) ... \cdot (n - x + 1)}{x!} \cdot \frac{\lambda^x}{n^x} \cdot (1 - \frac{\lambda}{n})^n \cdot (1 - \frac{\lambda}{n})^{-x}</script><script type="math/tex; mode=display">= \lim_{n \rightarrow \infty} \frac{n \cdot (n - 1) ... \cdot (n - x+ 1)}{n^x} \cdot \frac{\lambda^x}{x
-!} \cdot \lim_{n \rightarrow \infty} (1 - \frac{\lambda}{n})^n (1 - \frac{\lambda}{n})^{-x}</script><script type="math/tex; mode=display">= 1 \cdot \frac{\lambda^x}{x!} \cdot e^{-\lambda} \cdot 1 = e^{-\lambda} \cdot \frac{\lambda^k}{k!}</script><h1 id="Gaussian-Distribution-Normal-Distribution"><a href="#Gaussian-Distribution-Normal-Distribution" class="headerlink" title="Gaussian Distribution (Normal Distribution)"></a>Gaussian Distribution (Normal Distribution)</h1><h2 id="Probability-Density-Function"><a href="#Probability-Density-Function" class="headerlink" title="Probability Density Function"></a>Probability Density Function</h2><p>Given <script type="math/tex">\mu = E(X)</script> and <script type="math/tex">\sigma^2 = Var(X)</script>,</p>
+!} \cdot \lim_{n \rightarrow \infty} (1 - \frac{\lambda}{n})^n (1 - \frac{\lambda}{n})^{-x}</script><script type="math/tex; mode=display">= 1 \cdot \frac{\lambda^x}{x!} \cdot e^{-\lambda} \cdot 1 = e^{-\lambda} \cdot \frac{\lambda^k}{k!}</script><p>The positive real number $\lambda$ is equal to the expected value and also its variance.</p>
+<script type="math/tex; mode=display">\lambda = \mu = \sigma^2</script><h1 id="Gaussian-Distribution-Normal-Distribution"><a href="#Gaussian-Distribution-Normal-Distribution" class="headerlink" title="Gaussian Distribution (Normal Distribution)"></a>Gaussian Distribution (Normal Distribution)</h1><h2 id="Probability-Density-Function"><a href="#Probability-Density-Function" class="headerlink" title="Probability Density Function"></a>Probability Density Function</h2><p>Given <script type="math/tex">\mu = E(X)</script> and <script type="math/tex">\sigma^2 = Var(X)</script>,</p>
 <script type="math/tex; mode=display">f(x \mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \; e^{-\frac{(x-\mu)^2}{2\sigma^2}}</script><p>A standard normal distribution follows <script type="math/tex">\mu = 1</script> and <script type="math/tex">\sigma^2 = 1</script></p>
 <h2 id="Cumulative-Distribution-Function"><a href="#Cumulative-Distribution-Function" class="headerlink" title="Cumulative Distribution Function"></a>Cumulative Distribution Function</h2><p>Cumulative Distribution Function, or <script type="math/tex">F(x)</script> is the probability that <script type="math/tex">X \leq x</script>.</p>
 <script type="math/tex; mode=display">F(x \mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi \sigma^2}} \int_{-\infty}^{x} e^{-\frac{(t-\mu)^2}{2\sigma^2}}dt</script>
