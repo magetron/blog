@@ -22,27 +22,32 @@
     var CONFIG = {"hostname":"blog.patrickwu.uk","root":"/","scheme":"Muse","version":"7.7.2","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="blog">
-<meta property="og:url" content="http://blog.patrickwu.uk/">
+  <meta name="description" content="Authors: Chris Lattner, Joe Groff  IntroductionModern Cocoa development involves a lot of asynchronous programming using closures and completion handlers, but these APIs are hard to use.  This gets p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Async&#x2F;Await for Swift">
+<meta property="og:url" content="http://blog.patrickwu.uk/22/03/2020/Async-Await-for-Swift/">
 <meta property="og:site_name" content="blog">
+<meta property="og:description" content="Authors: Chris Lattner, Joe Groff  IntroductionModern Cocoa development involves a lot of asynchronous programming using closures and completion handlers, but these APIs are hard to use.  This gets p">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-22T04:44:48.000Z">
+<meta property="article:modified_time" content="2020-03-22T04:50:35.298Z">
 <meta property="article:author" content="patrick wu">
+<meta property="article:tag" content="swift">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://blog.patrickwu.uk/">
+<link rel="canonical" href="http://blog.patrickwu.uk/22/03/2020/Async-Await-for-Swift/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false
+    isHome : false,
+    isPost : true
   };
 </script>
 
-  <title>blog</title>
+  <title>Async/Await for Swift | blog</title>
   
     <script>
       function sendPageView() {
@@ -166,10 +171,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/22/03/2020/Async-Await-for-Swift/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -183,8 +188,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/22/03/2020/Async-Await-for-Swift/" class="post-title-link" itemprop="url">Async/Await for Swift</a>
+          Async/Await for Swift
         </h1>
 
         <div class="post-meta">
@@ -209,7 +213,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ul>
+        <ul>
 <li>Authors: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2xhdHRuZXI=" title="https://github.com/lattner">Chris Lattner<i class="fa fa-external-link"></i></span>, <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2pja2FydGVy" title="https://github.com/jckarter">Joe Groff<i class="fa fa-external-link"></i></span></li>
 </ul>
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Modern Cocoa development involves a lot of asynchronous programming using closures and completion handlers, but these APIs are hard to use.  This gets particularly problematic when many asynchronous operations are used, error handling is required, or control flow between asynchronous calls gets complicated.  This proposal describes a language extension to make this a lot more natural and less error prone.</p>
@@ -346,728 +350,36 @@
 <p>This can be fixed in the Objective-C importer, which is going to be making thunks for the<br>completion-handler functions anyway: the thunk could check to see if the completion handler<br>is being run on a different queue than the function was invoked on, and if so, enqueue the<br>completion handler on the original queue.</p>
 <h2 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h2><p>Thanks to @oleganza for the original draft which influenced this!</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/swift/" rel="tag"># swift</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/22/03/2020/An-innovative-approach-to-re-design-mobile-learning-experience-with-X5Learn/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="patrick wu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/22/03/2020/An-innovative-approach-to-re-design-mobile-learning-experience-with-X5Learn/" class="post-title-link" itemprop="url">An Innovative Approach to Re-Design Mobile Learning Experience with X5Learn</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">posted on</span>
-              
-
-              <time title="created: 22-03-2020 04:06:06 / modified: 04:12:55" itemprop="dateCreated datePublished" datetime="2020-03-22T04:06:06+00:00">22-03-2020</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Patrick Wu, Yinrui Hu</p>
-<h2 id="About-Us"><a href="#About-Us" class="headerlink" title="About Us"></a>About Us</h2><p><img src="/images/An-innovative-approach-to-re-design-mobile-learning-experience-with-X5Learn/team.png" alt="teammate"></p>
-<p>Hello, we are Team 4. My name is <span class="exturl" data-url="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL3BhdHJpY2stZGFpcWktd3Uv" title="https://www.linkedin.com/in/patrick-daiqi-wu/">Patrick Wu<i class="fa fa-external-link"></i></span>, the team lead and a 2nd-Year Computer Science student at University College London. My interest mainly lies in low-level system design and networked systems. For this summer, I’m going to intern at a trading firm working on its infrastructural components.<br>My teammate <span class="exturl" data-url="aHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2luL3lpbnJ1aS1odS0wNTAyMTUxODIv" title="https://www.linkedin.com/in/yinrui-hu-050215182/">Yinrui(Felix) Hu<i class="fa fa-external-link"></i></span>, is also a second-year computer science student studying at UCL. He is mostly interested in artificial intelligence and cyber-security related fields.<br>I am delighted to be working with Yinrui this year, and developed a brand new mobile application with many innovative approaches for UCL’s X5Learn research team, our industrial partner.</p>
-<h2 id="What-have-we-been-working-on"><a href="#What-have-we-been-working-on" class="headerlink" title="What have we been working on?"></a>What have we been working on?</h2><p>Online Education is no stranger to us, students, nowadays, as we have been utilising this extensively in day to day life. For instance, due to the recent COVID-19 outbreak, UCL students would all logon to Moodle to conduct remote learning through contents of formats including but not limited to videos, texts and audios. Apart from Moodle, there are such a great number of alternatives out there, e.g. Coursera, Khan Academy, LinkedIn Learning, MIT Open Courseware and many more. The trouble mainly lies which platform to choose instead of a lack of learning materials. As a student, we have spent way too long looking for a useful resource rather than learning itself. Therefore, X5GON and X5Learn as a Software-as-a-Service (SaaS), can solve this problem for you.</p>
-<p>The main focus of X5GON development team is creating a solution that will help users/students find what they need not just in OER repositories, but across all open educational resources on the web. This solution will adapt to the user’s needs and learn how to make ongoing customised recommendations and suggestions through a truly interactive and impactful learning experience.</p>
-<p><img src="/images/An-innovative-approach-to-re-design-mobile-learning-experience-with-X5Learn/desktop.png" alt="website version of X5Learn"></p>
-<p>Figure 1. A demonstration of X5Learn’s website version.</p>
-<p>Our goal, as a student team, is to develop a mobile application that utilises the X5Learn platform and provide an authentic and mobile-friendly user experience. With this mobile application, the X5Learn system would be able to attract more customers from the mobile platform and enable users to access their customised X5Learn learning contents at all times.</p>
-<h2 id="What-are-the-technical-challenges"><a href="#What-are-the-technical-challenges" class="headerlink" title="What are the technical challenges?"></a>What are the technical challenges?</h2><p>The critical challenge above all is to differentiate our application from other proprietary learning platforms. We continuously ask ourselves how to make the app more accessible and easy to navigate around for users. Given the fact there are many established applications out there, our team considered trying them out ourselves and conduct double-blind experiments on UI, app responsiveness and content relevancy experiments. We have learnt a lot in the process and greatly influenced our design of X5GON-Mobile afterwards.</p>
-<p>Whilst we are testing out multiple applications under the <code>eduroam</code> network environment, there was one significant issue that emerged out of the dark. Some apps, under mediocre network environment, suffered from constant loss of network connection and plodding loading speed. Also, given the fact that the X5Learn usually takes 10 to 15 seconds to process videos and generate analytic reports, these together makes the app increasingly laggy and unusable at all under such circumstances. This issue of performance we noticed at an early stage influenced our application design and development process thereafter and is proven to be a significant differentiating factor for our application.</p>
-<p>Last but not least, another essential technical challenge we faced was that the X5Learn was in ongoing development. Hence, many of the functionalities we aim to accomplish in our project are still in development or doesn’t exist as an API from the back-end. This caused us considerable trouble initially. However, we were able to overcome this difficulty eventually and made our application more adaptable to this type of situation, which would be beneficial for future expansion of the whole platform after our delivery of the project.</p>
-<h2 id="How-did-we-solve-them"><a href="#How-did-we-solve-them" class="headerlink" title="How did we solve them?"></a>How did we solve them?</h2><p><img src="/images/An-innovative-approach-to-re-design-mobile-learning-experience-with-X5Learn/technologies.png" alt="technologies at glance"></p>
-<p>Figure 2. An overview of the technologies used in this project.</p>
-<p>We tackled challenges above using advanced technology provided by <code>Apple</code>, the open-source community and algorithms written by ourselves.</p>
-<p><img src="/images/An-innovative-approach-to-re-design-mobile-learning-experience-with-X5Learn/comparison.png" alt="comparison of app"></p>
-<p>Figure 3. A comparison between traditional learning app and our approach.</p>
-<p>From a design perspective, we took the information-feed approach rather than listing all courses available for the users find. As on most other platforms, users would have to search for what they want to learn, we actively push this information to the screen for users to choose from, similar to video sites but unlike a learning platform. Our design also utilises an innovative way of enabling users to read bullet-points or browse external supportive contents. Users can scroll to a sidebar whilst not stopping the video and start from there. They can also minimise the video to let it play as a floating window at the bottom of the screen. This design received great feedback from our clients and users at our testing stage.</p>
-<p><img src="/images/An-innovative-approach-to-re-design-mobile-learning-experience-with-X5Learn/performance.gif" alt="fast fetching optimisation"></p>
-<p>Figure 4. A demonstration of our app’s performance on videos.</p>
-<p>With regards to the performance of the application, we utilised extensive caching and predicting techniques to minimise the lag and increase the responsiveness. First of all, the choice of using <code>Swift</code> to develop a native <code>iOS</code> application provides us with a faster foundation compared to hybrid frameworks like <code>React Native</code>. More so, our aggressive pre-loading daemon utilised a <code>HashMap</code> storing technique and regularly fetches first 20-seconds of content whenever user finds the thumbnail on display. Although we did make a trade-off of having more background tasks, which is negligible, app users now receive a notably faster application and smoother learning experience.</p>
-<p>As a project that has both the ongoing development of front-end and back-end at the same time, we found it challenging to adapt to the constant changing API as an external mobile application. Therefore, we then utilised <code>SwiftSoup</code>, an external parser for HTML,<br>together with our own algorithm to analyse changing API endpoints on the fly and self-adapt the code. This still at an early stage and would require a constant change of code to actually make the new version work. However, this adaptive API layer has undoubtedly saved us a lot of time investigating broken APIs and migrating to new ones.</p>
-<h2 id="Some-Final-Thoughts"><a href="#Some-Final-Thoughts" class="headerlink" title="Some Final Thoughts"></a>Some Final Thoughts</h2><p>Having never developed an <code>iOS</code> application, we have learned a lot about <code>Apple</code> ‘s tool-chain and especially the <code>Swift</code> language. While developing this project, an issue among which also encouraged to make an actual contribution to the <code>apple/swift</code> language on its co-routine implementation. Our team find this year of cooperating with UCL’s X5Learn Team very enjoyable and worthwhile.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/12/03/2020/Continuous-Probability-Distributions/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="patrick wu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/12/03/2020/Continuous-Probability-Distributions/" class="post-title-link" itemprop="url">Continuous Probability Distributions</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">posted on</span>
-
-              <time title="created: 12-03-2020 23:05:22" itemprop="dateCreated datePublished" datetime="2020-03-12T23:05:22+00:00">12-03-2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">edited on</span>
-                <time title="modified: 14-03-2020 22:20:24" itemprop="dateModified" datetime="2020-03-14T22:20:24+00:00">14-03-2020</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Aside from the aforementioned Uniform Distribution, there are many types of distributions for continuous random variables.</p>
-<h1 id="The-Exponential-Distribution"><a href="#The-Exponential-Distribution" class="headerlink" title="The Exponential Distribution"></a>The Exponential Distribution</h1><p>Parameter $ \lambda \quad (\lambda &gt; 0) $</p>
-<script type="math/tex; mode=display">X \sim Exp(\lambda)</script><script type="math/tex; mode=display">c.d.f \quad F(x) = 1 - e^{-\lambda x} \quad (x > 0)</script><script type="math/tex; mode=display">p.d.f \quad f(x) = \frac{d F(x)}{dx} = -e^{-\lambda x} \cdot -\lambda = \lambda e^{-\lambda x} \quad (x > 0)</script><script type="math/tex; mode=display">\mu = \int_{0}^{\infty} xf(x)dx = \lambda \int_{0}^{\infty} xe^{-\lambda x}dx</script><script type="math/tex; mode=display">u = x, \quad v = \frac{e^{-\lambda x}}{-\lambda}</script><script type="math/tex; mode=display">\int xe^{-\lambda x}dx = uv - \int u'v = \frac{xe^{-\lambda x}}{-\lambda} - \frac{-1}{\lambda} \int e^{-\lambda x} dx</script><script type="math/tex; mode=display">w = -\lambda x, \quad \frac{dw}{dx} = -\lambda, \quad dx = \frac{dw}{-\lambda}</script><script type="math/tex; mode=display">\int e^{-\lambda x}dx = \int e^{w} \cdot \frac{dw}{-\lambda} = \frac{1}{-\lambda} e^{w} = \frac{1}{-\lambda} e^{-\lambda x}</script><script type="math/tex; mode=display">\int xe^{-\lambda x}dx = \frac{xe^{-\lambda x}}{-\lambda} - \frac{-1}{\lambda} \frac{1}{-\lambda} e^{-\lambda x} = -\frac{xe^{-\lambda x}}{\lambda} - \frac{e^{-\lambda x}}{\lambda^2}</script><script type="math/tex; mode=display">\mu = \lambda [-\frac{xe^{-\lambda x}}{\lambda} - \frac{e^{-\lambda x}}{\lambda^2}]_0^\infty = \lambda (0 + \frac{1}{\lambda^2}) = \frac{1}{\lambda}</script><script type="math/tex; mode=display">\sigma^2 = \int_{0}^{\infty} x^2f(x) dx - \mu^2 = \lambda \int_{0}^{\infty} x^2 e^{-\lambda x} dx - \frac{1}{\lambda^2}</script><script type="math/tex; mode=display">u = x^2, \quad v = \frac{e^{-\lambda x}}{-\lambda}</script><script type="math/tex; mode=display">\int x^2 e^{-\lambda x} dx = uv - \int u'v = \frac{x^2 e^{-\lambda x}}{-\lambda} - 2\int x \cdot \frac{e^{-\lambda x}}{-\lambda}dx = \frac{-x^2 e^{-\lambda x}}{\lambda} + \frac{2}{\lambda} \int x \cdot e^{-\lambda x}dx</script><script type="math/tex; mode=display">\int x^2 e^{-\lambda x} dx = \frac{-x^2 e^{-\lambda x}}{\lambda} + \frac{2}{\lambda} ( -\frac{xe^{-\lambda x}}{\lambda} - \frac{e^{-\lambda x}}{\lambda^2}) = \frac{-x^2 \cdot e^{-\lambda x}}{\lambda} - \frac{2xe^{-\lambda x}}{\lambda^2} -\frac{2 e^{-\lambda x}}{\lambda^3}</script><script type="math/tex; mode=display">\sigma^2 = \lambda [\frac{-x^2 \cdot e^{-\lambda x}}{\lambda} - \frac{2xe^{-\lambda x}}{\lambda^2} -\frac{2 e^{-\lambda x}}{\lambda^3}]^{\infty}_{0} - \frac{1}{\lambda^2} = \lambda (0 + \frac{2}{\lambda^3}) - \frac{1}{\lambda^2} = \frac{1}{\lambda^2}</script><h1 id="The-Normal-Distribution"><a href="#The-Normal-Distribution" class="headerlink" title="The Normal Distribution"></a>The Normal Distribution</h1><p>Parameter $ \mu, \sigma^2 $</p>
-<script type="math/tex; mode=display">X \sim N(\mu, \sigma^2)</script><script type="math/tex; mode=display">p.d.f \quad f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x - \mu)^2}{2 \sigma^2}}, \quad (-\infty < x < \infty)</script><script type="math/tex; mode=display">c.d.f \quad F(x) = \int_{-\infty}^{x} f(x)dx = \int_{-\infty}^{x} \frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{(x - \mu)^2}{2 \sigma^2}} dx = \frac{1}{\sigma \sqrt{2 \pi}} \int_{-\infty}^{x} e^{\frac{- x^2 + 2\mu x - \mu^2}{2 \sigma^2}}</script><script type="math/tex; mode=display">F(x) = \frac{1}{\sigma \sqrt{2 \pi}} \cdot \int_{-\infty}^{x} e^{-\frac{1}{2\sigma^2} x^2} \cdot \int_{-\infty}^{x} e^{\frac{\mu}{\sigma^2} x} \cdot e^{\frac{-\mu^2}{2\sigma^2}} = \frac{1}{\sigma \sqrt{2 \pi}} \cdot \frac{\sqrt{\pi}\sigma \cdot erf(\frac{x}{\sqrt{2}\sigma})}{\sqrt{2}}  \cdot \frac{\sigma^2 e^{\frac{\mu x}{\sigma^2}}}{\mu} \cdot e^{\frac{-\mu^2}{2 \sigma^2}}</script><script type="math/tex; mode=display">F(x) = \frac{\sigma^2 \cdot erf(\frac{x}{\sqrt{2}\sigma}) \cdot e^{\frac{2\mu x - \mu^2}{2\sigma^2}}}{2\mu}</script><script type="math/tex; mode=display">E(X) = \mu</script><script type="math/tex; mode=display">Var(X) = \sigma^2</script><h2 id="Central-Limit-Theorem"><a href="#Central-Limit-Theorem" class="headerlink" title="Central Limit Theorem"></a>Central Limit Theorem</h2><p>The sample mean of a large independent random sample (from any distribution) is approximately normally distributed.</p>
-<script type="math/tex; mode=display">\bar{X} = \frac{1}{n} \Sigma_{i = 1}^{n} X_i</script><p>$ \bar{X} $ is for large $n$, normal distributed with mean $\mu$ and variance $\frac{\sigma^2}{n}$.</p>
-<script type="math/tex; mode=display">\Sigma_{i = 1}^{n} X_i \sim N(n\mu, n\sigma^2)</script><h2 id="Standard-Normal-Distribution"><a href="#Standard-Normal-Distribution" class="headerlink" title="Standard Normal Distribution"></a>Standard Normal Distribution</h2><p>Let $ X \sim N(\mu, \sigma^2) $ and let $ Z = \frac{X - \mu}{\sigma} $</p>
-<script type="math/tex; mode=display">E(Z) = \frac{1}{\sigma}E(X) - \frac{\mu}{\sigma} = 0</script><script type="math/tex; mode=display">Var(Z) = \frac{1}{\sigma^2}Var(X) + 0 = 1</script><p>$ Z \sim N(0, 1) $ is standard normal distribution.</p>
-
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/22/03/2020/An-innovative-approach-to-re-design-mobile-learning-experience-with-X5Learn/" rel="prev" title="An Innovative Approach to Re-Design Mobile Learning Experience with X5Learn">
+      <i class="fa fa-chevron-left"></i> An Innovative Approach to Re-Design Mobile Learning Experience with X5Learn
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/10/03/2020/CC-Series-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="patrick wu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/10/03/2020/CC-Series-1/" class="post-title-link" itemprop="url">C++ Notes Series (No. 1) Package Principles and Namespaces</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">posted on</span>
-
-              <time title="created: 10-03-2020 22:10:42" itemprop="dateCreated datePublished" datetime="2020-03-10T22:10:42+00:00">10-03-2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">edited on</span>
-                <time title="modified: 12-03-2020 02:08:45" itemprop="dateModified" datetime="2020-03-12T02:08:45+00:00">12-03-2020</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><blockquote>
-<p>In computer programming, package principles are a way of organizing classes in larger systems to make them more organized and manageable. They aid in understanding which classes should go into which packages (package cohesion) and how these packages should relate with one another (package coupling). Package principles also includes software package metrics, which help to quantify the dependency structure, giving different and/or more precise insights into the overall structure of classes and packages. </p>
-</blockquote>
-<p>An important counterpart of which is <code>namespace</code> in <code>C++</code>. CPPReference states that </p>
-<blockquote>
-<p>Namespaces provide a method for preventing name conflicts in large projects.</p>
-<p>Symbols declared inside a namespace block are placed in a named scope that prevents them from being mistaken for identically-named symbols in other scopes.</p>
-<p>Multiple namespace blocks with the same name are allowed. All declarations within those blocks are declared in the named scope.</p>
-</blockquote>
-<h1 id="Discussion-on-functions-in-namespaces-or-classes"><a href="#Discussion-on-functions-in-namespaces-or-classes" class="headerlink" title="Discussion on functions in namespaces or classes"></a>Discussion on functions in namespaces or classes</h1><p>Putting an isolate function in a <code>namespace</code> could be rather a better decision than incorporating it in a <code>class</code> as a <code>method</code>, contradicting to what we have learnt from <code>COMP0004</code>. More specifically, whenever you can implement some functionality efficiently without having to access any private or protected code or data members, you should break it into a free function in the class’s namespace instead of leaving it as a member function. The reason is that by doing so, you keep the class’s interface as small as possible, and thereby reduce the amount of code that potentially needs to be changed if you change the private internals of the class, which is the point of Objective Oriented Programming (OOP) in the first place. Scott Meyers, author of Effective C++, <span class="exturl" data-url="aHR0cHM6Ly93d3cuZHJkb2Jicy5jb20vY3BwL2hvdy1ub24tbWVtYmVyLWZ1bmN0aW9ucy1pbXByb3ZlLWVuY2Fwc3UvMTg0NDAxMTk3" title="https://www.drdobbs.com/cpp/how-non-member-functions-improve-encapsu/184401197">goes into more detail here<i class="fa fa-external-link"></i></span>.</p>
-<p>Unfortunately, separating out code that works on <code>T</code> from the class <code>T</code> itself just feels untidy to many programmers raised on the OOP mantra of “Bring code and data together”. But “bringing code and data together” doesn’t actually achieve anything material from a code maintenance or expressiveness point of view — all it gets you is a certain aesthetic appeal, so if you can get past that, you will benefit from the materially better design that comes from keeping class interfaces as small as possible.</p>
-<p>If it takes a while to convince yourself that separate functions are actually the Right Thing, don’t feel bad — Meyers’s own first edition of Effective C++ made the same mistake. An example of the C++ Standard Library getting it wrong would be a function like <code>find_first_of()</code> in <code>std::string</code>, which can be implemented with full efficiency without having to know any of the internal details of a <code>std::string</code> — all such a function needs is access to the public functions <code>size()</code> and <code>operator[]()</code>.</p>
-<p>To end with Scott Meyers own paragraph, </p>
-<blockquote>
-<p>It’s time to abandon the traditional, but inaccurate, ideas of what it means to be object-oriented. Are you a true encapsulation believer? If so, I know you’ll embrace non-friend non-member functions with the fervor they deserve.</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/25/02/2020/Continuous-Random-Variables-vs-Discrete-Random-Variables-Part-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="patrick wu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/25/02/2020/Continuous-Random-Variables-vs-Discrete-Random-Variables-Part-2/" class="post-title-link" itemprop="url">Continuous Random Variables VS. Discrete Random Variables (Part 2)</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">posted on</span>
-
-              <time title="created: 25-02-2020 15:41:59" itemprop="dateCreated datePublished" datetime="2020-02-25T15:41:59+00:00">25-02-2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">edited on</span>
-                <time title="modified: 12-03-2020 02:09:02" itemprop="dateModified" datetime="2020-03-12T02:09:02+00:00">12-03-2020</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Continuous-Distributions"><a href="#Continuous-Distributions" class="headerlink" title="Continuous Distributions"></a>Continuous Distributions</h1><h2 id="Uniform-Distribution"><a href="#Uniform-Distribution" class="headerlink" title="Uniform Distribution"></a>Uniform Distribution</h2><script type="math/tex; mode=display">X \sim U(a, b)</script><p>This indicates that all outcomes from interval $(a, b)$ are equally likely.</p>
-<script type="math/tex; mode=display">f(x) = \frac{1}{b - a} \quad \forall a < x < b</script><script type="math/tex; mode=display">f(x) = 0 \quad (otherwise)</script><script type="math/tex; mode=display">F(x) = 0 \quad \forall a \leq x</script><script type="math/tex; mode=display">F(x) = \frac{x - a}{b - a} \quad \forall a < x < b</script><script type="math/tex; mode=display">F(x) = 1 \quad \forall x \leq b</script><script type="math/tex; mode=display">E(X) = \int^b_a x \frac{1}{b - a}dx =  [\frac{x^2}{2(b - a)}]^b_a = \frac{b^2 - a^2}{2(b - a)} = \frac{a + b}{2}</script><script type="math/tex; mode=display">Var(X) = \int^b_a x^2 \frac{1}{b - a}dx - E(X)^2 = [\frac{x^3}{3(b - a)}]^b_a - E(X)^2 = \frac{b^3 - a^3}{3(b - a)} - E(X)^2</script><script type="math/tex; mode=display">= \frac{(b - a)(b^2 + ab + a^2}{3(b - a)} - E(X)^2 = \frac{b^2 + ab + a^2}{3} - \frac{a^2 + b^2 + 2ab}{4}</script><script type="math/tex; mode=display">= \frac{4b^2 + 4ab + 4a^2 - 3a^2 - 3b^2 - 6ab}{12} = \frac{a^2 - 2ab + b^2}{12} = \frac{(a - b)^2}{12}</script><ul>
-<li>Possible Usage: as a starting point in simulations, if we can generate a random number in $U(0, 1)$, we can arbitrarily expand the range to almost any other uniform distribution</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/24/02/2020/Continuous-Random-Variables-vs-Discrete-Random-Variables-Part-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="patrick wu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/24/02/2020/Continuous-Random-Variables-vs-Discrete-Random-Variables-Part-1/" class="post-title-link" itemprop="url">Continuous Random Variables VS. Discrete Random Variables (Part 1)</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">posted on</span>
-
-              <time title="created: 24-02-2020 20:39:55" itemprop="dateCreated datePublished" datetime="2020-02-24T20:39:55+00:00">24-02-2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">edited on</span>
-                <time title="modified: 12-03-2020 02:08:55" itemprop="dateModified" datetime="2020-03-12T02:08:55+00:00">12-03-2020</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h2><ul>
-<li>Discrete random variable : countable number of possible values</li>
-<li><p>Continuous random variable : uncountably (infinite) number of possible values</p>
-</li>
-<li><p>The cumulative distribution function of a variable $X$ is the function</p>
-</li>
-</ul>
-<script type="math/tex; mode=display">F(x) = P(X \leq x) \quad \forall x \in R</script><ul>
-<li>The probability density function of a variable $X$ is the function</li>
-</ul>
-<script type="math/tex; mode=display">f(x) = \frac{dF(x)}{dx}</script><p>A given point on $f(x)$ should <strong>not</strong> be interpreted as $f(x) = P(X = x)$. It should be an analogy to density, or change of probability rate at $x$.</p>
-<p>Properties for $f(x)$,</p>
-<ul>
-<li><p>$f(x) \geq 0, \forall x \in R $</p>
-</li>
-<li><p>$\int_a^b f(x) dx = [F(x)]_a^b = F(b) - F(a) = P(a &lt; X \leq B) $</p>
-</li>
-<li><p>$\int_{-\infty}^{\infty}f(x) dx = P(-\infty &lt; X \leq + \infty) = 1 $</p>
-</li>
-</ul>
-<p>Population Mean</p>
-<script type="math/tex; mode=display">\mu = E(X) = \int_{-\infty}^{\infty} xf(x) dx</script><script type="math/tex; mode=display">\sigma^2 = Var(X) = E[X^2] - E[X]^2 = \int_{-\infty}^{\infty} x^2 f(x)dx - \mu^2</script><p>For any transformation made on $x$, let $g(x)$</p>
-<script type="math/tex; mode=display">E(g(x)) = \int_{-\infty}^{\infty} g(x)f(x) dx</script><p>Two continuous random variables $X$ and $Y$ are independant </p>
-<script type="math/tex; mode=display">\iff P(X = x_i, Y = y_j) = P(X = x_i) \cdot P(Y = y_j) \quad \forall x_i, y_j</script><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>Given a unit circle marked with $0, 1, 2, 3$ at $\theta = 0, \frac{\pi}{2}, \pi, \frac{3\pi}{2}$ respectively. The circumference of the unit circle has value range from $0 \leq Y &lt; 4$.</p>
-<p>A pointer from the origin with length of $1$ is spun and is equally likely to stop anywhere on the circle. Let $Y$ be the value obtained from the circle.</p>
-<p>$Y$ is a continuous random variable.</p>
-<script type="math/tex; mode=display">P(Y \leq 1) = \frac{1}{4}</script><script type="math/tex; mode=display">P(Y \leq 2) = \frac{1}{2}</script><script type="math/tex; mode=display">P(3 < Y \leq 3.5) = \frac{1}{8}</script><p>In the example above</p>
-<script type="math/tex; mode=display">F(y) = 0 \; (y < 0), \quad F(y) = \frac{y}{4} \; (0 \leq y < 4), \quad F(y) = 1 \; (4 \leq y)</script><script type="math/tex; mode=display">f(y) = F'(y) = \frac{1}{4} \; (0 \leq y < 4)</script><script type="math/tex; mode=display">\mu = \int_{0}^{4} y \cdot \frac{1}{4} = [\frac{1}{8}y^2]_0^4 = 2</script><script type="math/tex; mode=display">\sigma^2 = \int_{0}^{4} \cdot y^2 \frac{1}{4} - 2^2= [\frac{1}{12}y^3]_0^4 - 4 = \frac{4}{3}</script><h2 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h2><p>In the next post, we will be looking at continuous distributions, as similar to discrete distributions in previous posts <a href="https://blog.patrickwu.uk/11/02/2020/Statistical-Distributions-Part-1/">here, part 1</a> and <a href="https://blog.patrickwu.uk/12/02/2020/Statistical-Distributions-Part-2/">here, part 2</a>.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/23/02/2020/CC-Series-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="patrick wu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/23/02/2020/CC-Series-0/" class="post-title-link" itemprop="url">C++ Notes Series (No. 0)</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">posted on</span>
-
-              <time title="created: 23-02-2020 01:42:31" itemprop="dateCreated datePublished" datetime="2020-02-23T01:42:31+00:00">23-02-2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">edited on</span>
-                <time title="modified: 12-03-2020 02:08:36" itemprop="dateModified" datetime="2020-03-12T02:08:36+00:00">12-03-2020</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Hi, I have decided to start a series to blog post to enrich my blog content and also, share several insights of myself when learning <code>C++</code>, especially modern <code>C++</code> features.</p>
-<p>I have made a list below on possible features I am looking at to write in this series.</p>
-<h1 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h1><ul>
-<li>Pointers and Smart Pointers</li>
-<li>Classes, Structs, Constructors, Destructors, Copy Constructors</li>
-<li>More on OOP: Inheritance, Virtual Functions, Interfaces, Visibility</li>
-<li>STLs</li>
-<li>Macros and Lambdas</li>
-<li>Namespaces</li>
-<li>Threads, Concurrency features</li>
-<li>Design Patterns: Singletons, Factories</li>
-<li>Move semantics, Rvalue References, Forwarding References, <code>auto</code> keyword</li>
-<li>Maps and Sets Splicing</li>
-<li>Parallel Algorithms in <code>C++17</code></li>
-</ul>
-<p>This is the content list for the moment, and I believe this will keep me busy for a while. However, if there is something specific you want to see, please don’t hesitate to drop me an email at patrick.wu (at) linux.com .</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/13/02/2020/Exploring-Flask-Auth-Methods-Part-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="patrick wu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/13/02/2020/Exploring-Flask-Auth-Methods-Part-2/" class="post-title-link" itemprop="url">Exploring Flask Authentication Methods Part 2</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">posted on</span>
-
-              <time title="created: 13-02-2020 20:27:47" itemprop="dateCreated datePublished" datetime="2020-02-13T20:27:47+00:00">13-02-2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">edited on</span>
-                <time title="modified: 12-03-2020 02:09:27" itemprop="dateModified" datetime="2020-03-12T02:09:27+00:00">12-03-2020</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Continued"><a href="#Continued" class="headerlink" title="Continued"></a>Continued</h2><p>Last time we talked about CSRF tokens. So what is CSRF?</p>
-<h3 id="Cross-Site-Request-Forgery"><a href="#Cross-Site-Request-Forgery" class="headerlink" title="Cross-Site Request Forgery"></a>Cross-Site Request Forgery</h3><p>Well, <span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvQ3Jvc3Mtc2l0ZV9yZXF1ZXN0X2Zvcmdlcnk=" title="https://en.wikipedia.org/wiki/Cross-site_request_forgery">Wikipedia<i class="fa fa-external-link"></i></span> has a brief explanation of how it works. In short,</p>
-<blockquote>
-<p>Cross-site request forgery, also known as one-click attack or session riding and abbreviated as CSRF (sometimes pronounced sea-surf[1]) or XSRF, is a type of malicious exploit of a website where unauthorized commands are transmitted from a user that the web application trusts.</p>
-</blockquote>
-<p>There are many ways to utilise CSRF on unprotected websites. However, this can be largely prevented by providing the user with a <code>csrf_token</code> only when they logging in on the valid website, and storing them in sessions.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>My final solution to this problem, in the <code>Swift</code> code below, is to use a web request to get a <code>csrf_token</code> and then login with a valid user request.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">fetchCSRFToken</span> <span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> csrfToken = <span class="string">""</span></span><br><span class="line">    <span class="keyword">let</span> semaphore = <span class="type">DispatchSemaphore</span>(value: <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">let</span> task = <span class="type">URLSession</span>.shared.dataTask(with: <span class="type">URL</span>.<span class="keyword">init</span>(string: newAdapter.generateLoginQueryURL())!) &#123;(data, response, error) <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">defer</span> &#123; semaphore.signal() &#125;</span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> data = data <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> divFields: <span class="type">Elements</span> = <span class="keyword">try</span> <span class="type">SwiftSoup</span>.parse(<span class="type">String</span>(decoding: data, <span class="keyword">as</span>: <span class="type">UTF8</span>.<span class="keyword">self</span>)).body()!.select(<span class="string">"div"</span>)</span><br><span class="line">            <span class="keyword">let</span> centreDiv = divFields.array()[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">let</span> inputFields = <span class="keyword">try</span> centreDiv.select(<span class="string">"form"</span>).first()!.select(<span class="string">"input"</span>)</span><br><span class="line">            <span class="keyword">for</span> inputField <span class="keyword">in</span> inputFields &#123;</span><br><span class="line">                <span class="keyword">if</span> inputField.id() == <span class="string">"csrf_token"</span> &#123;</span><br><span class="line">                    csrfToken = <span class="keyword">try</span> inputField.val()</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"error: cannot fetch csrf token"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    task.resume()</span><br><span class="line">    semaphore.wait()</span><br><span class="line">    <span class="keyword">if</span> (csrfToken == <span class="string">""</span>) &#123;</span><br><span class="line">        <span class="built_in">fatalError</span>(<span class="string">"error: cannot fetch csrf token"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> csrfToken</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Afterwards, generate a <code>POST</code> request in <code>JSON</code> style (e.g. <code>{email: &quot;x5user@mail.com&quot;, password:&quot;pwd&quot;, csrf_token:&quot;token&quot;}</code>) and post it to your designated <code>flask-security</code> login endpoint. You will get a response with your authentication token. From then on, use this authentication token for future requests.</p>
-<h2 id="What’s-more"><a href="#What’s-more" class="headerlink" title="What’s more?"></a>What’s more?</h2><p>Authentication tokens should have a valid lifetime and re-authenticate from time to time to ensure better security. We have yet to come up with a solution to modify <code>flask-security</code>‘s internal mechanisms to realise this feature.</p>
-<p>Regarding the <code>HTTP</code> request, we are planning to adapt to <code>Alamofire</code> for more elegant network solutions.</p>
-<h2 id="More"><a href="#More" class="headerlink" title="More"></a>More</h2><p>For more information, checkout</p>
-<ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvQ3Jvc3Mtc2l0ZV9yZXF1ZXN0X2Zvcmdlcnk=" title="https://en.wikipedia.org/wiki/Cross-site_request_forgery">Wikipedia - Cross-site Request Forgery<i class="fa fa-external-link"></i></span> </li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9mbGFzay13dGYucmVhZHRoZWRvY3MuaW8vZW4vc3RhYmxlL2NzcmYuaHRtbA==" title="https://flask-wtf.readthedocs.io/en/stable/csrf.html">CSRF Protection - Flask<i class="fa fa-external-link"></i></span></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/12/02/2020/Statistical-Distributions-Part-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="patrick wu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/12/02/2020/Statistical-Distributions-Part-2/" class="post-title-link" itemprop="url">Statistical Distributions (Part 2)</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">posted on</span>
-
-              <time title="created: 12-02-2020 10:29:05" itemprop="dateCreated datePublished" datetime="2020-02-12T10:29:05+00:00">12-02-2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">edited on</span>
-                <time title="modified: 15-03-2020 00:14:15" itemprop="dateModified" datetime="2020-03-15T00:14:15+00:00">15-03-2020</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Poisson-Distribution-Continued"><a href="#Poisson-Distribution-Continued" class="headerlink" title="Poisson Distribution (Continued)"></a>Poisson Distribution (Continued)</h1><p>As stated in the previous post, </p>
-<p>Let </p>
-<script type="math/tex; mode=display">\lambda = n \cdot p</script><script type="math/tex; mode=display">Binomial(n, p) \approx Poisson(n p) = Poisson(\lambda)</script><p>For Binomial Distribution,</p>
-<script type="math/tex; mode=display">P(x) = C_n^x p^x q^{n-x} = C_n^x \cdot (\frac{\lambda}{n})^x \cdot (1 - \frac{\lambda}{n})^{n -x}</script><p>Thus,</p>
-<script type="math/tex; mode=display">\lim_{n \rightarrow \infty} P(x) = \lim_{n \rightarrow \infty} \frac{n \cdot (n - 1) ... \cdot (n - x + 1)}{x!} \cdot \frac{\lambda^x}{n^x} \cdot (1 - \frac{\lambda}{n})^n \cdot (1 - \frac{\lambda}{n})^{-x}</script><script type="math/tex; mode=display">= \lim_{n \rightarrow \infty} \frac{n \cdot (n - 1) ... \cdot (n - x+ 1)}{n^x} \cdot \frac{\lambda^x}{x
-!} \cdot \lim_{n \rightarrow \infty} (1 - \frac{\lambda}{n})^n (1 - \frac{\lambda}{n})^{-x}</script><script type="math/tex; mode=display">= 1 \cdot \frac{\lambda^x}{x!} \cdot e^{-\lambda} \cdot 1 = e^{-\lambda} \cdot \frac{\lambda^k}{k!}</script><p>The positive real number $\lambda$ is equal to the expected value and also its variance.</p>
-<script type="math/tex; mode=display">\lambda = \mu = \sigma^2</script><h1 id="Gaussian-Distribution-Normal-Distribution"><a href="#Gaussian-Distribution-Normal-Distribution" class="headerlink" title="Gaussian Distribution (Normal Distribution)"></a>Gaussian Distribution (Normal Distribution)</h1><h2 id="Probability-Density-Function"><a href="#Probability-Density-Function" class="headerlink" title="Probability Density Function"></a>Probability Density Function</h2><p>Given <script type="math/tex">\mu = E(X)</script> and <script type="math/tex">\sigma^2 = Var(X)</script>,</p>
-<script type="math/tex; mode=display">f(x \mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \; e^{-\frac{(x-\mu)^2}{2\sigma^2}}</script><p>A standard normal distribution follows <script type="math/tex">\mu = 1</script> and <script type="math/tex">\sigma^2 = 1</script></p>
-<h2 id="Cumulative-Distribution-Function"><a href="#Cumulative-Distribution-Function" class="headerlink" title="Cumulative Distribution Function"></a>Cumulative Distribution Function</h2><p>Cumulative Distribution Function, or <script type="math/tex">F(x)</script> is the probability that <script type="math/tex">X \leq x</script>.</p>
-<script type="math/tex; mode=display">F(x \mid \mu, \sigma^2) = \frac{1}{\sqrt{2\pi \sigma^2}} \int_{-\infty}^{x} e^{-\frac{(t-\mu)^2}{2\sigma^2}}dt</script>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://blog.patrickwu.uk/11/02/2020/Statistical-Distributions-Part-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="patrick wu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/11/02/2020/Statistical-Distributions-Part-1/" class="post-title-link" itemprop="url">Statistical Distributions (Part 1)</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">posted on</span>
-
-              <time title="created: 11-02-2020 19:33:07" itemprop="dateCreated datePublished" datetime="2020-02-11T19:33:07+00:00">11-02-2020</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">edited on</span>
-                <time title="modified: 12-03-2020 02:09:43" itemprop="dateModified" datetime="2020-03-12T02:09:43+00:00">12-03-2020</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Discrete-Random-Variable"><a href="#Discrete-Random-Variable" class="headerlink" title="Discrete Random Variable"></a>Discrete Random Variable</h1><p>Given <script type="math/tex">X</script>, a discrete random variable, </p>
-<p>Population Mean (Expectancy) </p>
-<script type="math/tex; mode=display">\mu = E(X) = \Sigma^{N}_{i = 1}x_i p_i</script><p>Population Variance </p>
-<script type="math/tex; mode=display">\sigma^2 = Var(X) = E[(X - \mu)^2] = \Sigma^{N}_{i = 1}(x_i - \mu)^2p_i = \Sigma^{N}_{i = 1}x_i^2p_i - \mu^2</script><p>If two discrete random variables $X$ and $Y$ are independent, </p>
-<script type="math/tex; mode=display">P(X = x, Y = y) = P(X = x)\cdot P(Y = y)</script><h1 id="Bernoulli-Distribution"><a href="#Bernoulli-Distribution" class="headerlink" title="Bernoulli Distribution"></a>Bernoulli Distribution</h1><script type="math/tex; mode=display">p = P(success)</script><p>If success, <script type="math/tex">X = 1</script>. If failure, <script type="math/tex">X = 0</script>.</p>
-<script type="math/tex; mode=display">P(X = 1) = p, \quad P(X = 0) = 1 - p</script><script type="math/tex; mode=display">E(X) = p \cdot 1 + (1 - p) \cdot  0 = p</script><script type="math/tex; mode=display">Var(X) = p - p^2 = p(1 - p)</script><h1 id="Binomial-Distribution"><a href="#Binomial-Distribution" class="headerlink" title="Binomial Distribution"></a>Binomial Distribution</h1><p>$X = $ number of successes in <script type="math/tex">n</script> independent repetitions of the experiment.</p>
-<p>Define <script type="math/tex">X_i</script> as the <script type="math/tex">i</script>th repetition’s success or not. <script type="math/tex">X_i</script> follows a Bernoulli Distribution.</p>
-<script type="math/tex; mode=display">E(X_i) = p, \quad Var(X_i) = p(1 - p)</script><script type="math/tex; mode=display">X = \Sigma_{i = 1}^{n} X_i</script><script type="math/tex; mode=display">E(X) = n \cdot p, Var(X) = n \cdot p(1 - p)</script><script type="math/tex; mode=display">P(X = k) = C_n^k p^k (1 - p)^{n - k}</script><h1 id="Geometric-Distribution"><a href="#Geometric-Distribution" class="headerlink" title="Geometric Distribution"></a>Geometric Distribution</h1><p>$X = $ number of tries up to and including first success</p>
-<script type="math/tex; mode=display">P(X = k) = (1 - p)^{k - 1}p</script><script type="math/tex; mode=display">E(X) = \Sigma_{k = 1}^{n}kp(1 - p)^{k - 1} = p(1 + 2(1 - p) + 3(1 - p)^2 + ... + n(1 - p)^{n - 1})</script><p>Let </p>
-<script type="math/tex; mode=display">q = 1 - p, \quad S = 1 + 2q + 3q^2 + ... + n q^{n- 1}</script><script type="math/tex; mode=display">qS = q + 2q^2 + ... + n q^{n}</script><script type="math/tex; mode=display">(1 - q)S = 1 + q + q^2 + ... + q^{n - 1} - nq^n = \frac{1 - q^n}{1 - q} - nq^n</script><script type="math/tex; mode=display">S = \frac{1 - q^n}{(1 - q)^2} - \frac{nq^n}{1 - q}</script><p>Given <script type="math/tex">0 < q < 1, \quad n \xrightarrow{} \infty</script></p>
-<script type="math/tex; mode=display">\lim_{n \xrightarrow{} \infty} S = \frac{1}{(1 - q)^2}</script><p>Such that <script type="math/tex">E(X) = \frac{p}{(1 - q)^2} = \frac{1}{p}</script></p>
-<script type="math/tex; mode=display">Var(X) = E(X^2) - E(X)^2</script><p>Using the same method as above, <script type="math/tex">E(X^2) = p\frac{1 - q^2}{(1 - q)^4} = p\frac{1 + q}{(1 - q)^3} = \frac{1 + q}{(1 - q)^2}</script></p>
-<script type="math/tex; mode=display">Var(X) = \frac{1 + q}{(1 - q)^2} - \frac{1}{p^2} = \frac{q}{p^2}</script><h1 id="Poisson-Distribution-To-be-continued…"><a href="#Poisson-Distribution-To-be-continued…" class="headerlink" title="Poisson Distribution (To be continued…)"></a>Poisson Distribution (To be continued…)</h1><script type="math/tex; mode=display">P(X = k) = \frac{e^{-\mu}\mu^k}{k!}, \quad E(X) = \mu, \quad Var(X) = \mu</script><p>Poisson Distribution is essentially a binomial distribution with very large $n$ (very small time interval).</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="next page"></i></a>
-  </nav>
-
 
 
           </div>
@@ -1118,6 +430,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation-Completion-handlers-are-suboptimal"><span class="nav-number">2.</span> <span class="nav-text">Motivation: Completion handlers are suboptimal</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Problem-1-Pyramid-of-doom"><span class="nav-number">2.0.1.</span> <span class="nav-text">Problem 1: Pyramid of doom</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Problem-2-Error-handling"><span class="nav-number">2.0.2.</span> <span class="nav-text">Problem 2: Error handling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Problem-3-Conditional-execution-is-hard-and-error-prone"><span class="nav-number">2.0.3.</span> <span class="nav-text">Problem 3: Conditional execution is hard and error-prone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Problem-4-Many-mistakes-are-easy-to-make"><span class="nav-number">2.0.4.</span> <span class="nav-text">Problem 4: Many mistakes are easy to make</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Problem-5-Because-completion-handlers-are-awkward-too-many-APIs-are-defined-synchronously"><span class="nav-number">2.0.5.</span> <span class="nav-text">Problem 5: Because completion handlers are awkward, too many APIs are defined synchronously</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Problem-6-Other-“resumable”-computations-are-awkward-to-define"><span class="nav-number">2.0.6.</span> <span class="nav-text">Problem 6: Other “resumable” computations are awkward to define</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Proposed-Solution-Coroutines"><span class="nav-number">3.</span> <span class="nav-text">Proposed Solution: Coroutines</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Async-semantics"><span class="nav-number">3.1.</span> <span class="nav-text">Async semantics</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Entering-and-leaving-async-code"><span class="nav-number">3.1.1.</span> <span class="nav-text">Entering and leaving async code</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conversion-of-imported-Objective-C-APIs"><span class="nav-number">4.</span> <span class="nav-text">Conversion of imported Objective-C APIs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interaction-with-existing-features"><span class="nav-number">5.</span> <span class="nav-text">Interaction with existing features</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Error-handling"><span class="nav-number">5.0.1.</span> <span class="nav-text">Error handling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Closure-type-inference"><span class="nav-number">5.0.2.</span> <span class="nav-text">Closure type inference</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#defer-and-abandonment"><span class="nav-number">5.0.3.</span> <span class="nav-text">defer and abandonment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Completion-handlers-with-multiple-return-values"><span class="nav-number">5.0.4.</span> <span class="nav-text">Completion handlers with multiple return values</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-Compatibility"><span class="nav-number">6.</span> <span class="nav-text">Source Compatibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Effect-on-ABI-stability"><span class="nav-number">7.</span> <span class="nav-text">Effect on ABI stability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alternate-Syntax-Options"><span class="nav-number">8.</span> <span class="nav-text">Alternate Syntax Options</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spelling-of-async-keyword"><span class="nav-number">8.0.1.</span> <span class="nav-text">Spelling of async keyword</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Make-async-be-a-subtype-of-throws-instead-of-orthogonal-to-it"><span class="nav-number">8.0.2.</span> <span class="nav-text">Make async be a subtype of throws instead of orthogonal to it</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Make-async-default-to-throws"><span class="nav-number">8.0.3.</span> <span class="nav-text">Make async default to throws</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Behavior-of-beginAsync-and-suspendAsync-operations"><span class="nav-number">8.0.4.</span> <span class="nav-text">Behavior of beginAsync and suspendAsync operations</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alternatives-Considered"><span class="nav-number">9.</span> <span class="nav-text">Alternatives Considered</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Include-Future-or-other-coordination-abstractions-in-this-proposal"><span class="nav-number">9.0.1.</span> <span class="nav-text">Include Future or other coordination abstractions in this proposal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Have-async-calls-always-return-a-Future"><span class="nav-number">9.0.2.</span> <span class="nav-text">Have async calls always return a Future</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Have-a-generalized-“do-notation”-for-monadic-types"><span class="nav-number">9.0.3.</span> <span class="nav-text">Have a generalized “do notation” for monadic types</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Potential-Future-Directions"><span class="nav-number">10.</span> <span class="nav-text">Potential Future Directions</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#New-Foundation-GCD-and-Server-APIs"><span class="nav-number">10.0.1.</span> <span class="nav-text">New Foundation, GCD, and Server APIs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Documentation"><span class="nav-number">10.0.2.</span> <span class="nav-text">Documentation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rethrows-could-be-generalized-to-support-potentially-async-operations"><span class="nav-number">10.0.3.</span> <span class="nav-text">rethrows could be generalized to support potentially async operations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Blocking-calls"><span class="nav-number">10.0.4.</span> <span class="nav-text">Blocking calls</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fix-queue-hopping-Objective-C-completion-handlers"><span class="nav-number">10.0.5.</span> <span class="nav-text">Fix queue-hopping Objective-C completion handlers</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thanks"><span class="nav-number">11.</span> <span class="nav-text">Thanks</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1293,59 +606,6 @@ window.addEventListener('pjax:success', () => {
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
